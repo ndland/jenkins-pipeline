@@ -2,7 +2,6 @@ pipeline {
     environment {
         registry = "ndland/jenkins-docker-test"
         DOCKER_PWD = credentials('docker-login-pwd')
-        sh echo 'DOCKER_PWD' + $DOCKER_PWD
     }
     agent {
         docker {

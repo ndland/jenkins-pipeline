@@ -5,7 +5,7 @@ pipeline {
     }
     agent {
         docker {
-            image 'gnschenker/jenkins-node-sample'
+            image 'docker'
             args '-p 3000:3000'
             args '-w /app'
             args '-v /var/run/docker.sock:/var/run/docker.sock'
@@ -22,7 +22,6 @@ pipeline {
         }
         stage("Test"){
             steps {
-                sh 'echo $PWD'
                 sh 'npm test'
             }
         }
